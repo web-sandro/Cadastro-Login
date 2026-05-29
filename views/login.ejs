@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Sistema</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-card">
+
+            <h1 class="titulo-login">
+                Sistema de Cadastro
+            </h1>
+
+            <p class="subtitulo">
+                Faça login para acessar o sistema
+            </p>
+
+            <form action="/lista" method="GET" class="formulario">
+
+                <div class="campo">
+                    <label class="label">E-mail</label>
+
+                    <input type="email" name="email" class="input" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div class="campo">
+                    <label class="label">Senha</label>
+
+                    <input type="password" name="senha" class="input" placeholder="Digite sua senha" required>
+                </div>
+
+                <button type="submit" class="btn-login">
+                    Entrar
+                </button>
+
+            </form>
+
+            <a href="/" class="btn btn-back">
+                ← Voltar
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

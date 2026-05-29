@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Adicionar Usuário</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <div class="form-container">
+
+    <h1 class="titulo">Adicionar Usuário</h1>
+
+    <form action="/addUser" method="POST" class="formulario">
+
+      <div class="campo">
+        <label class="label">Nome</label>
+
+        <input
+          type="text"
+          name="name"
+          class="input"
+          placeholder="Digite o nome"
+          required>
+      </div>
+
+      <div class="campo">
+        <label class="label">E-mail</label>
+
+        <input
+          type="email"
+          name="email"
+          class="input"
+          placeholder="Digite o e-mail"
+          required>
+      </div>
+
+      <div class="campo">
+        <label class="label">Senha</label>
+
+        <input
+          type="password"
+          name="password"
+          class="input"
+          placeholder="Digite a senha"
+          required>
+      </div>
+
+      <button type="submit" class="btn btn-submit">
+        Cadastrar
+      </button>
+
+    </form>
+
+    <a href="/" class="btn btn-back">
+      ← Voltar
+    </a>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Usuários</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="topo">
+      <h1 class="titulo">Lista de Usuários</h1>
+
+      <a href="/addUser" class="btn btn-add">
+        + Adicionar Usuário
+      </a>
+    </div>
+
+    <ul class="lista-users">
+
+      <% users.forEach(user=> { %>
+
+        <li class="card-user">
+
+          <div class="user-info">
+            <p class="user-name">
+              <strong>Nome:</strong>
+              <%= user.name %>
+            </p>
+
+            <p class="user-email">
+              <strong>E-mail:</strong>
+              <%= user.email %>
+            </p>
+          </div>
+
+          <div class="acoes">
+
+            <a href="/edit/<%= user.id %>" class="btn btn-edit">
+              Editar
+            </a>
+
+            <a href="/delete/<%= user.id %>" class="btn btn-delete"
+              onclick="return confirm('Tem certeza que deseja excluir este usuário?')">
+
+              Excluir
+            </a>
+
+          </div>
+
+        </li>
+
+        <% }) %>
+
+          <a href="/" class="btn btn-edit">
+            Inicio
+          </a>
+
+    </ul>
+
+  </div>
+
+</body>
+
+</html>

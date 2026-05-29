@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Usuário</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <div class="form-container">
+
+    <h1 class="titulo">Editar Usuário</h1>
+
+    <form
+      action="/edit/<%= user.id %>"
+      method="POST"
+      class="formulario">
+
+      <div class="campo">
+
+        <label class="label">Nome</label>
+
+        <input
+          type="text"
+          name="name"
+          class="input"
+          value="<%= user.name %>"
+          required>
+
+      </div>
+
+      <div class="campo">
+
+        <label class="label">E-mail</label>
+
+        <input
+          type="email"
+          name="email"
+          class="input"
+          value="<%= user.email %>"
+          required>
+
+      </div>
+
+      <div class="campo">
+
+        <label class="label">Senha</label>
+
+        <input
+          type="password"
+          name="password"
+          class="input"
+          value="<%= user.password %>"
+          required>
+
+      </div>
+
+      <button type="submit" class="btn btn-submit">
+        Atualizar
+      </button>
+
+    </form>
+
+    <a href="/lista" class="btn btn-back">
+      ← Voltar
+    </a>
+
+  </div>
+
+</body>
+</html>

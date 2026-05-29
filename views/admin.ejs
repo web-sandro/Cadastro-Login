@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Configuração Admin</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <h1 class="titulo">
+            Configuração do Admin
+        </h1>
+
+        <form
+            action="/admin/update"
+            method="POST"
+            class="formulario">
+
+            <div class="campo">
+
+                <label class="label">
+                    Login
+                </label>
+
+                <input
+                    type="text"
+                    name="email"
+                    class="input"
+                    value="<%= admin.email %>"
+                    required>
+
+            </div>
+
+            <div class="campo">
+
+                <label class="label">
+                    Senha
+                </label>
+
+                <input
+                    type="password"
+                    name="password"
+                    class="input"
+                    value="<%= admin.password %>"
+                    required>
+
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-submit">
+
+                Salvar
+            </button>
+
+        </form>
+
+        <a href="/lista" class="btn btn-back">
+            ← Voltar
+        </a>
+
+    </div>
+
+</body>
+
+</html>
