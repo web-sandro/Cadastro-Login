@@ -1,1 +1,3 @@
 # Cadastro-Login
+
+npm start
