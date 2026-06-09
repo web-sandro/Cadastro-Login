@@ -302,3 +302,179 @@ body {
     text-align: center;
     display: block;
 }
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+/* HEADER */
+
+.header{
+    background:#0f172a;
+    color:white;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.header nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+/* BANNER */
+
+.banner{
+    background:linear-gradient(135deg,#2563eb,#1e40af);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.banner h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+/* PRODUTOS */
+
+.produtos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    padding:40px;
+}
+
+.produto{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+    text-align:center;
+}
+
+.produto:hover{
+    transform:translateY(-8px);
+}
+
+.produto img{
+    width:100%;
+}
+
+.produto h3{
+    margin:15px 0;
+}
+
+.produto p{
+    font-size:22px;
+    color:#2563eb;
+    font-weight:bold;
+}
+
+.produto button{
+    margin:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+}
+
+/* BOTÃO FLUTUANTE */
+
+.btn-flutuante{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:70px;
+    height:70px;
+    border:none;
+    border-radius:50%;
+    background:#2563eb;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(0,0,0,.3);
+    z-index:999;
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.modal-content{
+    background:white;
+    width:400px;
+    border-radius:15px;
+    padding:30px;
+    position:relative;
+}
+
+.fechar{
+    position:absolute;
+    right:15px;
+    top:10px;
+    font-size:30px;
+    cursor:pointer;
+}
+
+.abas{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.abas button{
+    flex:1;
+    padding:12px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.modal form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.modal input{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.modal form button{
+    padding:12px;
+    border:none;
+    background:#16a34a;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}

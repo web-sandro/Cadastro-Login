@@ -23,6 +23,17 @@ const User = {
         return rows[0];
     },
 
+    // BUSCAR POR EMAIL
+    getByEmail: async (email) => {
+
+        const [rows] = await db.query(
+            'SELECT * FROM users WHERE email = ?',
+            [email]
+        );
+
+        return rows[0];
+    },
+
     // CADASTRAR
     create: async (user) => {
 
@@ -31,6 +42,12 @@ const User = {
             email,
             password
         } = user;
+
+        const usuarioExistente = await User.getByEmail(email);
+
+        if (usuarioExistente) {
+            throw new Error('E-mail já cadastrado');
+        }
 
         const [result] = await db.query(
             `

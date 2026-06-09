@@ -3,35 +3,126 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Sistema de Cadastro</title>
+    <title>Loja Esportiva Pro Sports</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
 
-    <div class="login-container">
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            🏆 Pro Sports
+        </div>
 
-        <div class="login-card">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Produtos</a>
+            <a href="#">Ofertas</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
 
-            <h1 class="titulo-login">
-                Sistema de Cadastro
-            </h1>
+    <!-- BANNER -->
+    <section class="banner">
+        <h1>Os melhores produtos esportivos</h1>
+        <p>Qualidade, conforto e desempenho.</p>
+    </section>
 
-            <p class="subtitulo">
-                Escolha uma opção para continuar
-            </p>
+    <!-- PRODUTOS -->
+    <section class="produtos">
 
-            <div class="botoes-inicio">
+        <div class="produto">
+            <img src="https://via.placeholder.com/250x200" alt="">
+            <h3>Tênis Running</h3>
+            <p>R$ 299,90</p>
+            <button>Comprar</button>
+        </div>
 
-                <!-- LOGIN -->
-                <a href="/login" class="btn-login btn-opcao">
+        <div class="produto">
+            <img src="https://via.placeholder.com/250x200" alt="">
+            <h3>Camisa Dry Fit</h3>
+            <p>R$ 89,90</p>
+            <button>Comprar</button>
+        </div>
+
+        <div class="produto">
+            <img src="https://via.placeholder.com/250x200" alt="">
+            <h3>Bola Oficial</h3>
+            <p>R$ 149,90</p>
+            <button>Comprar</button>
+        </div>
+
+        <div class="produto">
+            <img src="https://via.placeholder.com/250x200" alt="">
+            <h3>Mochila Esportiva</h3>
+            <p>R$ 119,90</p>
+            <button>Comprar</button>
+        </div>
+
+    </section>
+
+    <!-- BOTÃO FLUTUANTE -->
+    <button class="btn-flutuante" onclick="abrirModal()">
+        👤
+    </button>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <span class="fechar" onclick="fecharModal()">&times;</span>
+
+            <div class="abas">
+
+                <button onclick="mostrarLogin()">
                     Login
-                </a>
+                </button>
 
-                <!-- CADASTRO -->
-                <a href="/addUser" class="btn-login btn-opcao">
+                <button onclick="mostrarCadastro()">
                     Cadastro
-                </a>
+                </button>
+
+            </div>
+
+            <!-- LOGIN -->
+            <div id="loginBox">
+
+                <h2>Login</h2>
+
+                <form action="/login" method="POST">
+
+                    <input type="email" name="email" placeholder="E-mail" required>
+
+                    <input type="password" name="password" placeholder="Senha" required>
+
+                    <button type="submit">
+                        Entrar
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- CADASTRO -->
+            <div id="cadastroBox" style="display:none;">
+
+                <h2>Cadastro</h2>
+
+                <form action="/addUser" method="POST">
+
+                    <input type="text" name="name" placeholder="Nome" required>
+
+                    <input type="email" name="email" placeholder="E-mail" required>
+
+                    <input type="password" name="password" placeholder="Senha" required>
+
+                    <button type="submit">
+                        Cadastrar
+                    </button>
+
+                </form>
 
             </div>
 
@@ -39,5 +130,36 @@
 
     </div>
 
+    <script>
+
+        function abrirModal() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function fecharModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        function mostrarLogin() {
+            document.getElementById('loginBox').style.display = 'block';
+            document.getElementById('cadastroBox').style.display = 'none';
+        }
+
+        function mostrarCadastro() {
+            document.getElementById('loginBox').style.display = 'none';
+            document.getElementById('cadastroBox').style.display = 'block';
+        }
+
+        window.onclick = function (event) {
+            let modal = document.getElementById('modal');
+
+            if (event.target == modal) {
+                fecharModal();
+            }
+        }
+
+    </script>
+
 </body>
+
 </html>

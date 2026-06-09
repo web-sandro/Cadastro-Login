@@ -18,39 +18,41 @@ const userController = {
 
         try {
 
-            const { email, senha } = req.body;
+            const { email, password } = req.body;
 
             const admin = await Admin.getAdmin();
 
-            if (!admin) {
-                return res.send(`
-                    <h1>Administrador não encontrado</h1>
-                    <a href="/login">Voltar</a>
-                `);
+            // LOGIN ADMIN
+            if (
+                admin &&
+                email === admin.email &&
+                password === admin.password
+            ) {
+                return res.redirect('/lista');
             }
+
+            // LOGIN USUÁRIO
+            const user = await User.getByEmail(email);
 
             if (
-                email === admin.email &&
-                senha === admin.password
+                user &&
+                password === user.password
             ) {
-
                 return res.redirect('/lista');
-
-            } else {
-
-                return res.send(`
-                    <h1>Login inválido</h1>
-                    <a href="/login">Voltar</a>
-                `);
             }
+
+            return res.send(`
+            <h1>Email ou senha inválidos</h1>
+            <a href="/login">Voltar</a>
+        `);
 
         } catch (error) {
 
             console.log(error);
 
             res.send(`
-                <h1>Erro ao fazer login</h1>
-            `);
+            <h1>Erro ao fazer login</h1>
+        `);
         }
     },
 
